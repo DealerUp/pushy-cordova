@@ -333,4 +333,10 @@ public class PushyPlugin extends CordovaPlugin {
             callback.error(exc.getMessage());
         }
     }
+
+    private void clearAllNotifications() {
+        final NotificationManager notificationManager = (NotificationManager) cordova.getActivity()
+            .getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+    }
 }
