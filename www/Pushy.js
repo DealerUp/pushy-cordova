@@ -61,6 +61,12 @@ var actions = [
         noCallback: true,
         platforms: ['android']
     },
+    {
+        name: 'setNotificationIcon',
+        noError: true,
+        noCallback: true,
+        platforms: ['android']
+    }
 ];
 
 // Expose native actions
