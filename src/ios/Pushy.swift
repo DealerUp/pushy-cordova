@@ -400,6 +400,16 @@ public class Pushy : NSObject {
         // Return enterprise endpoint
         return enterpriseApiEndpoint!
     }
+
+    // Device registration check
+    public func clearAllNotifications() -> Bool {
+        // Attempt to fetch persisted Pushy token
+        self.application.applicationIconBadgeNumber = 0
+        self.application.cancelAllLocalNotifications()
+
+        // Check for existance of non-nil token
+        return true;
+    }
     
     // APNs failed to register the device for push notifications
     @objc public func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
