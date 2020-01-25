@@ -62,10 +62,10 @@ var actions = [
         platforms: ['android']
     },
     {
-        name: 'setNotificationIcon',
+        name: "clearAllNotifications",
         noError: true,
         noCallback: true,
-        platforms: ['android']
+        platforms: ["android", "ios"]
     }
 ];
 
