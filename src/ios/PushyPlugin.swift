@@ -217,4 +217,19 @@
             callbackId: command.callbackId
         )
     }
+
+    @objc(clearAllNotifications:)
+    func clearAllNotifications(command: CDVInvokedUrlCommand) {
+        // Check whether the device is registered
+        let result = getPushyInstance().clearAllNotifications()
+
+        // Send result to Cordova app
+        self.commandDelegate!.send(
+            CDVPluginResult(
+                status: CDVCommandStatus_OK,
+                messageAs: nil
+            ),
+            callbackId: command.callbackId
+        )
+    }
 }
